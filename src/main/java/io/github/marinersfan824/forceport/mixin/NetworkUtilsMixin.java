@@ -1,4 +1,4 @@
-package me.duncanruns.forceport.mixin;
+package io.github.marinersfan824.forceport.mixin;
 
 import net.minecraft.client.util.NetworkUtils;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,7 +11,7 @@ public abstract class NetworkUtilsMixin {
      * @reason Replace port with 25565
      */
     @Overwrite
-    public static int findLocalPort() {
+    public static int method_2294() {
         return 25565;
     }
 }

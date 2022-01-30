@@ -1,13 +1,14 @@
 {
   "required": true,
-  "package": "me.duncanruns.forceport.mixin",
+  "minVersion": "0.8",
+  "package": "io.github.marinersfan824.forceport.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "NetworkUtilsMixin",
     "PlayerManagerMixin"
   ],
-  "client": [],
-  "server": [],
+  "client": [
+  ],
   "injectors": {
     "defaultRequire": 1
   }

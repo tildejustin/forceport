@@ -2,28 +2,36 @@
   "schemaVersion": 1,
   "id": "forceport",
   "version": "${version}",
+
   "name": "Force Port Mod",
   "description": "Forces the port of open to lan to be 25565 and increases the player limit of open to lan to 20.",
   "authors": [
-    "DuncanRuns",
-    "AppDevMichael"
+    "marinersfan824",
+    "duncanruns",
+    "appdevmichael"
   ],
-  "contributors": [],
-  "contact": {},
-  "license": "MIT",
-  "icon": "assets/forceport/icon.png",
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/modid/icon.png",
+
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.duncanruns.forceport.ForcePort"
-    ],
-    "client": [],
-    "server": []
+      "io.github.marinersfan824.forceport.Main"
+    ]
   },
   "mixins": [
     "forceport.mixins.json"
   ],
+
   "depends": {
-    "fabricloader": ">=0.12.9"
+    "fabricloader": ">=0.12.12"
+  },
+  "suggests": {
+    "flamingo": "*"
   }
 }
