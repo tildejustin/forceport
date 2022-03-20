@@ -1,15 +1,19 @@
 package io.github.marinersfan824.forceport.mixin;
 
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.PlayerManager;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerManager.class)
 public abstract class PlayerManagerMixin {
-    @Inject(method = "getMaxPlayerCount", at = @At("TAIL"), cancellable = true)
-    private void changeMaxPlayers(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(20);
+    @Shadow protected int maxPlayers;
+
+    @Inject(method = "<init>", at = @At("TAIL"))
+    private void changeMaxPlayers(MinecraftServer server, CallbackInfo ci) {
+        this.maxPlayers = 20;
     }
 }
