@@ -1,5 +1,7 @@
 package io.github.marinersfan824.forceport.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.util.NetworkUtils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -10,8 +12,9 @@ public abstract class NetworkUtilsMixin {
      * @author DuncanRuns
      * @reason Replace port with 25565
      */
+    @Environment(EnvType.CLIENT)
     @Overwrite
-    public static int method_2294() {
+    public static int getFreePort() {
         return 25565;
     }
 }
