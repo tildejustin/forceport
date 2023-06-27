@@ -14,6 +14,6 @@ public abstract class PlayerManagerMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void changeMaxPlayers(MinecraftServer server, CallbackInfo ci) {
-        this.maxPlayers = 20;
+        this.maxPlayers = Integer.MAX_VALUE;
     }
 }
