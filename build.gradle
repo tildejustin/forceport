@@ -1,6 +1,6 @@
 plugins {
-	id 'fabric-loom' version "1.2-SNAPSHOT" // To use chocoloom, change the version to a commit hash
-	id 'legacy-looming' version "1.2-SNAPSHOT"
+	id 'fabric-loom' version "1.5-SNAPSHOT" // To use chocoloom, change the version to a commit hash
+	id 'legacy-looming' version "1.5-SNAPSHOT"
 	id 'maven-publish'
 }
 
@@ -8,7 +8,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = "$project.mod_version+$project.minecraft_version"
 group = project.maven_group
 
 repositories {
@@ -19,11 +19,14 @@ repositories {
 
 
 loom {
+	legacyLooming {
+		intermediaryVersion.set(2)
+	}
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.legacyfabric:yarn:${project.yarn_mappings}:v2"
+	mappings "net.legacyfabric.v2:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 }
 

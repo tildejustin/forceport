@@ -14,7 +14,7 @@ public abstract class NetworkUtilsMixin {
      */
     @Environment(EnvType.CLIENT)
     @Overwrite
-    public static int getFreePort() {
+    public static int findLocalPort() {
         return 25565;
     }
 }
