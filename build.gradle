@@ -12,16 +12,13 @@ version = "$project.mod_version+$project.minecraft_version"
 group = project.maven_group
 
 repositories {
+	maven {url "https://jitpack.io" }
 }
 
-// Comment out this block if you're using Chocoloom
-// Comment when using loom 0.10
-
-
 loom {
-	legacyLooming {
-		intermediaryVersion.set(2)
-	}
+    legacyLooming {
+        intermediaryVersion.set(2)
+    }
 }
 
 dependencies {
