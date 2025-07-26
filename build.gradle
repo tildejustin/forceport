@@ -12,13 +12,7 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-}
-
-// Comment out this block if you're using Chocoloom
-// Comment when using loom 0.10
-
-
-loom {
+	maven {url "https://jitpack.io" }
 }
 
 dependencies {

@@ -1,5 +1,6 @@
 package io.github.marinersfan824.forceport.mixin;
 
+import io.github.marinersfan824.forceport.ForcePort;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.util.NetworkUtils;
@@ -15,6 +16,6 @@ public abstract class NetworkUtilsMixin {
     @Environment(EnvType.CLIENT)
     @Overwrite
     public static int getFreePort() {
-        return 25565;
+        return ForcePort.port;
     }
 }

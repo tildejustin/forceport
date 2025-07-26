@@ -4,29 +4,37 @@
   "version": "${version}",
 
   "name": "Force Port Mod",
-  "description": "Forces the port of open to lan to be 25565 and increases the player limit of open to lan to be as large as it can be.",
+  "description": "Forces the port of open to lan to a set number and increases the player limit of open to lan to be as large as it can be.",
   "authors": [
-    "marinersfan824",
-    "duncanruns",
+    {
+      "name": "marinersfan824",
+      "contact": {
+        "homepage": "https://github.com/marieee824"
+      }
+    }
+  ],
+  "contributors": [
+    "DuncanRuns",
     "appdevmichael",
     "tildejustin"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "sources": "https://github.com/marieee824/Force-Port-Mod",
+    "issues": "https://github.com/marieee824/Force-Port-Mod/issues"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "license": "MIT",
+  "icon": "assets/forceport/icon.png",
   "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.marinersfan824.forceport.ForcePort"
+    ]
+  },
   "mixins": [
     "forceport.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.12.12"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }
